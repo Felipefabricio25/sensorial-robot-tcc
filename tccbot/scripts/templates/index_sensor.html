@@ -1,0 +1,43 @@
+<!-- <body>
+    <div class="container">
+        <div class="row">
+            <div>
+                <img src="{{ url_for('video_feed') }}" width="100%" style="transform:rotate(90deg);">
+                <img src="{{ url_for('video_feed') }}" width="100%" style="transform:rotate(90deg);">
+            </div>
+        </div>
+    </div>
+    </body> -->
+
+    <html>
+<head>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            padding: 0;
+            display: block;
+            margin: 0;
+            height: 100vw;
+            width: 50vh;
+            
+        }
+
+        #container{
+            transform: rotate(90deg) translateY(-100%);
+            transform-origin:top left;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+                <img src="{{ url_for('info') }}">
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<launch>
+
+    <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" > 
+        <arg name="port" value="9090"/>
+    </include>
+
+    <node pkg="tccbot" type="pwm_ros.py" name="L298N_control"/>
+    <node pkg="tccbot" type="serial_imu_ros_tcc.py" name="imu_publish"/>
+
+    <include file="$(find teleop_twist_joy)/launch/teleop.launch" />
+
+    <node pkg="tccbot" type="sensor_transmission.py" name="flask_subs"/>
+</launch>
